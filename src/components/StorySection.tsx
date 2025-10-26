@@ -1,28 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Shield, Users, Zap, Heart } from "lucide-react";
-
-const features = [
-  {
-    icon: Shield,
-    title: "Safety & Stability",
-    description: "Advanced impact absorption and stability control systems"
-  },
-  {
-    icon: Users,
-    title: "Ergonomic Control",
-    description: "Precision posture management for optimal comfort"
-  },
-  {
-    icon: Zap,
-    title: "Pressure Prevention",
-    description: "Medical-grade design to prevent pressure injuries"
-  },
-  {
-    icon: Heart,
-    title: "User Dignity",
-    description: "Empowering independence and confidence"
-  }
-];
+import carbonFiberBg from "@/assets/carbon-fiber-bg.jpg";
 
 export const StorySection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,63 +28,77 @@ export const StorySection = () => {
       id="story" 
       className="py-32 relative overflow-hidden"
     >
-      {/* Background accent */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30" />
+      {/* Carbon fiber background with geometric lines */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url(${carbonFiberBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
+      
+      {/* Intersecting silver geometric lines overlay */}
+      <div className="absolute inset-0 opacity-10 geometric-pattern" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
-              Our Story
+            <h2 className="heading-font text-5xl md:text-6xl font-bold mb-6 tracking-wide">
+              Built from Lived Experience
             </h2>
-            <div className="w-20 h-1 mx-auto mb-8" style={{ background: 'var(--gradient-silver)' }} />
+            <div className="w-24 h-1 mx-auto mb-8" style={{ background: 'var(--gradient-silver)' }} />
           </div>
 
           {/* Story Content */}
-          <div className="space-y-8 text-lg leading-relaxed text-foreground/90">
-            <p className="text-center text-xl text-muted-foreground font-light italic">
-              Built from lived experience
+          <div className="space-y-8 text-lg leading-relaxed">
+            <p className="text-foreground/90">
+              CoreGuard Mobility was conceived by a high-risk quadriplegic wheelchair user, whose lived experience defines every design decision. The mission: to minimize secondary injury risks — including fall risk, head and impact injury, pressure injuries, and those caused by lack of posture support.
             </p>
 
-            <p>
-              CoreGuard Mobility was founded by a wheelchair user who understood firsthand the critical gaps in current mobility solutions. For individuals with quadriplegia and compromised core control, existing wheelchairs fail to address fundamental safety and comfort needs.
+            <p className="text-foreground/90">
+              CoreGuard Mobility represents considered, functional, and dignified design — by a wheelchair user, for wheelchair users.
             </p>
 
-            <p>
-              CoreGuard ONE represents a paradigm shift—a mobility system engineered from the ground up to redefine what wheelchair users should expect from their equipment. Every design decision stems from real-world experience and a deep understanding of high-risk user needs.
-            </p>
-
-            <div className="bg-card border rounded-xl p-8 my-12">
-              <h3 className="text-2xl font-light mb-6 text-center">Key Innovations</h3>
+            {/* Animated line drawings representation */}
+            <div className="my-16 p-12 rounded-xl bg-card/50 border border-primary/20 backdrop-blur-sm relative overflow-hidden">
+              {/* Decorative animated lines */}
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-shimmer" />
+              <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-shimmer" style={{ animationDelay: '2s' }} />
               
-              <div className="grid md:grid-cols-2 gap-6">
-                {features.map((feature, index) => (
-                  <div 
-                    key={feature.title}
-                    className="flex items-start gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-secondary/30"
-                    style={{
-                      animationDelay: `${index * 0.1}s`
-                    }}
-                  >
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-primary/10 border border-primary/20">
-                        <feature.icon className="w-6 h-6 text-primary" />
-                      </div>
+              <div className="relative">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                  <div className="space-y-3">
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                      <div className="w-8 h-8 border-2 border-primary rounded-full" />
                     </div>
-                    <div>
-                      <h4 className="font-medium mb-2">{feature.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
+                    <p className="text-sm text-muted-foreground">Ergonomic<br/>Precision</p>
                   </div>
-                ))}
+                  <div className="space-y-3">
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                      <div className="w-8 h-8 border-2 border-primary" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }} />
+                    </div>
+                    <p className="text-sm text-muted-foreground">Human Form<br/>Balance</p>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                      <div className="w-8 h-8 border-2 border-primary rounded-sm rotate-45" />
+                    </div>
+                    <p className="text-sm text-muted-foreground">Structural<br/>Stability</p>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                      <div className="w-8 h-8 border-2 border-primary" style={{ borderRadius: '50% 50% 0 0' }} />
+                    </div>
+                    <p className="text-sm text-muted-foreground">Adaptive<br/>Support</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <p className="text-center text-lg font-light pt-8">
-              This is more than a product. This is a movement to restore dignity, safety, and independence to those who need it most.
+            <p className="text-center text-xl font-light pt-8 text-primary/90 italic">
+              Every contour, every angle — engineered for protection, designed for dignity
             </p>
           </div>
         </div>

@@ -25,63 +25,99 @@ export const PartnersSection = () => {
     <section 
       ref={sectionRef}
       id="partners" 
-      className="py-32 relative"
+      className="py-32 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
-        <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      {/* Abstract geometric mesh background */}
+      <div className="absolute inset-0 opacity-10">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+              linear-gradient(90deg, transparent 49%, hsl(var(--primary) / 0.1) 49%, hsl(var(--primary) / 0.1) 51%, transparent 51%),
+              linear-gradient(0deg, transparent 49%, hsl(var(--primary) / 0.1) 49%, hsl(var(--primary) / 0.1) 51%, transparent 51%)
+            `,
+            backgroundSize: '100% 100%, 100% 100%, 100px 100px, 100px 100px'
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className={`max-w-5xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <div className="text-center mb-20">
+            <h2 className="heading-font text-5xl md:text-6xl font-bold mb-6 tracking-wide">
               Partners
             </h2>
-            <div className="w-20 h-1 mx-auto mb-8" style={{ background: 'var(--gradient-silver)' }} />
-            <p className="text-xl text-muted-foreground font-light">
-              Supported by leaders in innovation
+            <div className="w-24 h-1 mx-auto mb-8" style={{ background: 'var(--gradient-silver)' }} />
+            <p className="text-xl text-primary/80 font-light italic">
+              Innovation through collaboration
             </p>
           </div>
 
-          {/* Partner Logos */}
-          <div className="grid md:grid-cols-2 gap-12 items-center justify-items-center">
+          {/* Partner Logos - Silver Monochrome */}
+          <div className="grid md:grid-cols-2 gap-12 items-center justify-items-center mb-16">
             {/* Autodesk Foundation */}
-            <div className="group relative p-8 rounded-xl bg-card border hover:border-primary/50 transition-all duration-300 w-full max-w-sm">
-              <div className="flex items-center justify-center h-32">
+            <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
+              <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold mb-2" style={{ color: 'hsl(var(--primary))' }}>
+                  <div 
+                    className="heading-font text-4xl font-bold mb-3 transition-all duration-500 group-hover:scale-105"
+                    style={{ 
+                      color: 'hsl(var(--primary))',
+                      filter: 'grayscale(100%) brightness(1.2)',
+                      textShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+                    }}
+                  >
                     AUTODESK
                   </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider">
+                  <div className="text-sm text-primary/70 uppercase tracking-widest mb-4">
                     Foundation
+                  </div>
+                  <div className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                    Computer-Aided Design Software License Donation
                   </div>
                 </div>
               </div>
               <div 
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ boxShadow: 'var(--shadow-glow)' }}
               />
             </div>
 
             {/* AT4D */}
-            <div className="group relative p-8 rounded-xl bg-card border hover:border-primary/50 transition-all duration-300 w-full max-w-sm">
-              <div className="flex items-center justify-center h-32">
+            <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
+              <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{ color: 'hsl(var(--primary))' }}>
+                  <div 
+                    className="heading-font text-5xl font-bold mb-3 transition-all duration-500 group-hover:scale-105"
+                    style={{ 
+                      color: 'hsl(var(--primary))',
+                      filter: 'grayscale(100%) brightness(1.2)',
+                      textShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+                    }}
+                  >
                     AT4D
                   </div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider">
+                  <div className="text-xs text-primary/70 uppercase tracking-widest mb-4">
                     Assistive Technologies for Disability
+                  </div>
+                  <div className="text-xs text-muted-foreground leading-relaxed max-w-xs">
+                    Assistive Tech for Development Product Incubation
                   </div>
                 </div>
               </div>
               <div 
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ boxShadow: 'var(--shadow-glow)' }}
               />
             </div>
           </div>
 
           {/* Additional Context */}
-          <div className="mt-16 text-center">
-            <p className="text-muted-foreground leading-relaxed">
+          <div className="text-center">
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               CoreGuard Mobility is proud to collaborate with organizations dedicated to advancing assistive technology and empowering individuals with disabilities worldwide.
             </p>
           </div>
