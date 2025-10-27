@@ -31,14 +31,14 @@ export const Navigation = () => {
           <ul className="flex items-center gap-12">
             {navItems.map((item) => (
               <li key={item.name}>
-                <a
+              <a
                   href={item.href}
-                  className="heading-font text-sm tracking-wider uppercase text-primary/80 hover:text-primary transition-all duration-300 relative group"
+                  className="heading-font text-sm tracking-wider uppercase text-white/80 hover:text-white transition-all duration-300 relative group"
                 >
                   {item.name}
                   <span 
-                    className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent group-hover:w-full transition-all duration-500"
-                    style={{ boxShadow: '0 0 8px hsl(var(--primary))' }}
+                    className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-transparent via-white to-transparent group-hover:w-full transition-all duration-500"
+                    style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.5)' }}
                   />
                 </a>
               </li>

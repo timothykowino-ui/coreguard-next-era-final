@@ -50,7 +50,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="heading-font text-5xl md:text-7xl font-bold mb-6 tracking-wide animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <h1 className="heading-font text-5xl md:text-7xl font-bold mb-6 tracking-wide animate-fade-in-up text-white" style={{ animationDelay: '0.3s' }}>
             Introducing{" "}
             <span 
               className="bg-clip-text text-transparent"
@@ -64,11 +64,11 @@ export const HeroSection = () => {
           </h1>
 
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-2 font-light animate-fade-in-up tracking-wide" style={{ animationDelay: '0.5s' }}>
+          <p className="text-xl md:text-2xl mb-2 font-light animate-fade-in-up tracking-wide text-white/90" style={{ animationDelay: '0.5s' }}>
             Coming Soon
           </p>
 
-          <p className="text-lg md:text-xl text-primary/80 mb-8 font-light italic animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <p className="text-lg md:text-xl mb-8 font-light italic animate-fade-in-up text-white/80" style={{ animationDelay: '0.6s' }}>
             Engineered from lived experience. Designed for dignity.
           </p>
 
@@ -76,7 +76,7 @@ export const HeroSection = () => {
           <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <Button 
               size="lg"
-              className="heading-font px-10 py-6 text-base tracking-widest uppercase text-primary/80 hover:text-primary bg-primary/10 border-2 border-primary hover:bg-primary/20 hover:border-primary/80 transition-all duration-500 group relative overflow-hidden"
+              className="heading-font px-10 py-6 text-base tracking-widest uppercase text-white hover:text-white bg-primary/10 border-2 border-white/30 hover:bg-primary/20 hover:border-white/50 transition-all duration-500 group relative overflow-hidden"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <span className="relative z-10">Join the Waitlist</span>
