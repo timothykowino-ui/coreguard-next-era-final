@@ -5,17 +5,9 @@ import wheelchairPlatformBack from "@/assets/wheelchair-platform-back.png";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
-    
-    // Rotating platform animation
-    const interval = setInterval(() => {
-      setRotation(prev => (prev + 0.1) % 360);
-    }, 30);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -30,8 +22,8 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Rotating Platform with Draped Wheelchair */}
-          <div className="relative mx-auto mb-16 max-w-3xl">
+          {/* Static Platform with Draped Wheelchair */}
+          <div className="relative mx-auto mb-16 max-w-3xl mt-24">
             {/* Platform base with silver underlighting */}
             <div className="relative">
               <div 
@@ -42,48 +34,15 @@ export const HeroSection = () => {
                 }}
               />
               
-              {/* Rotating platform */}
-              <div 
-                className="relative mx-auto"
-                style={{
-                  transform: `perspective(1000px) rotateY(${rotation}deg)`,
-                  transformStyle: 'preserve-3d',
-                  transition: 'transform 0.03s linear'
-                }}
-              >
-                {/* Front view - plain black */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{
-                    transform: `rotateY(${-rotation}deg)`,
-                    backfaceVisibility: rotation > 90 && rotation < 270 ? 'hidden' : 'visible'
-                  }}
-                >
-                  <div className="w-full h-[500px] bg-black rounded-2xl border border-primary/10" />
-                </div>
-                
-                {/* Back view - wheelchair on platform image */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{
-                    transform: `rotateY(${180 - rotation}deg)`,
-                    backfaceVisibility: rotation > 90 && rotation < 270 ? 'visible' : 'hidden'
-                  }}
-                >
-                  <img 
-                    src={wheelchairPlatformBack} 
-                    alt="Revolutionary luxury mobility device draped in black silk on rotating platform"
-                    className="w-full h-auto max-w-3xl object-contain"
-                    style={{ filter: 'drop-shadow(0 0 30px hsl(var(--primary) / 0.4))' }}
-                  />
-                </div>
-
-                {/* Sweeping light effect */}
-                <div 
-                  className="absolute inset-0 pointer-events-none rounded-2xl"
-                  style={{
-                    background: `linear-gradient(${rotation}deg, transparent 0%, hsl(var(--primary) / 0.15) 50%, transparent 100%)`,
-                    animation: 'shimmer 4s linear infinite'
+              {/* Static image with seamless background blend */}
+              <div className="relative mx-auto">
+                <img 
+                  src={wheelchairPlatformBack} 
+                  alt="Revolutionary luxury mobility device draped in black silk on rotating platform"
+                  className="w-full h-auto max-w-3xl object-contain mx-auto"
+                  style={{ 
+                    filter: 'drop-shadow(0 0 30px hsl(var(--primary) / 0.4))',
+                    mixBlendMode: 'screen'
                   }}
                 />
               </div>
@@ -117,7 +76,7 @@ export const HeroSection = () => {
           <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <Button 
               size="lg"
-              className="heading-font px-10 py-6 text-base tracking-widest uppercase bg-primary/10 border-2 border-primary hover:bg-primary/20 hover:border-primary/80 transition-all duration-500 group relative overflow-hidden"
+              className="heading-font px-10 py-6 text-base tracking-widest uppercase text-primary/80 hover:text-primary bg-primary/10 border-2 border-primary hover:bg-primary/20 hover:border-primary/80 transition-all duration-500 group relative overflow-hidden"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <span className="relative z-10">Join the Waitlist</span>
