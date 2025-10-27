@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
-import kenyanEmblem from "@/assets/kenyan-emblem.png";
+import wheelchairPlatformBack from "@/assets/wheelchair-platform-back.png";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,43 +51,38 @@ export const HeroSection = () => {
                   transition: 'transform 0.03s linear'
                 }}
               >
-                {/* Silk drape with wheelchair silhouette */}
-                <div className="relative bg-gradient-to-b from-card/80 to-card rounded-2xl p-12 border border-primary/20 backdrop-blur-sm">
-                  {/* Front view - crescent headrest silhouette */}
-                  <div 
-                    className="absolute inset-0 flex items-center justify-center opacity-100"
-                    style={{
-                      transform: `rotateY(${-rotation}deg)`,
-                      backfaceVisibility: rotation > 90 && rotation < 270 ? 'hidden' : 'visible'
-                    }}
-                  >
-                    <div className="w-32 h-48 border-4 border-primary/30 rounded-t-full" />
-                  </div>
-                  
-                  {/* Back view - Kenyan emblem */}
-                  <div 
-                    className="absolute inset-0 flex items-center justify-center"
-                    style={{
-                      transform: `rotateY(${180 - rotation}deg)`,
-                      backfaceVisibility: rotation > 90 && rotation < 270 ? 'visible' : 'hidden'
-                    }}
-                  >
-                    <img 
-                      src={kenyanEmblem} 
-                      alt="Kenyan shield and crossed spears emblem"
-                      className="w-64 h-64 object-contain opacity-80"
-                      style={{ filter: 'drop-shadow(0 0 20px hsl(var(--primary) / 0.5))' }}
-                    />
-                  </div>
-                  
-                  <div className="h-64" />
+                {/* Front view - plain black */}
+                <div 
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{
+                    transform: `rotateY(${-rotation}deg)`,
+                    backfaceVisibility: rotation > 90 && rotation < 270 ? 'hidden' : 'visible'
+                  }}
+                >
+                  <div className="w-full h-[500px] bg-black rounded-2xl border border-primary/10" />
+                </div>
+                
+                {/* Back view - wheelchair on platform image */}
+                <div 
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{
+                    transform: `rotateY(${180 - rotation}deg)`,
+                    backfaceVisibility: rotation > 90 && rotation < 270 ? 'visible' : 'hidden'
+                  }}
+                >
+                  <img 
+                    src={wheelchairPlatformBack} 
+                    alt="Revolutionary luxury mobility device draped in black silk on rotating platform"
+                    className="w-full h-auto max-w-3xl object-contain"
+                    style={{ filter: 'drop-shadow(0 0 30px hsl(var(--primary) / 0.4))' }}
+                  />
                 </div>
 
                 {/* Sweeping light effect */}
                 <div 
-                  className="absolute inset-0 pointer-events-none"
+                  className="absolute inset-0 pointer-events-none rounded-2xl"
                   style={{
-                    background: `linear-gradient(${rotation}deg, transparent 0%, hsl(var(--primary) / 0.2) 50%, transparent 100%)`,
+                    background: `linear-gradient(${rotation}deg, transparent 0%, hsl(var(--primary) / 0.15) 50%, transparent 100%)`,
                     animation: 'shimmer 4s linear infinite'
                   }}
                 />
