@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import autodeskLogo from "@/assets/autodesk-logo.png";
 
 export const PartnersSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -62,21 +63,14 @@ export const PartnersSection = () => {
             <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
               <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
                 <div className="text-center">
-                  <div 
-                    className="heading-font text-4xl font-bold mb-3 transition-all duration-500 group-hover:scale-105"
-                    style={{ 
-                      color: 'hsl(var(--primary))',
-                      filter: 'grayscale(100%) brightness(1.2)',
-                      textShadow: '0 0 20px hsl(var(--primary) / 0.3)'
-                    }}
-                  >
-                    AUTODESK
-                  </div>
-                  <div className="text-sm text-primary/70 uppercase tracking-widest mb-4">
-                    Foundation
-                  </div>
+                  <img 
+                    src={autodeskLogo} 
+                    alt="Autodesk Technology Impact" 
+                    className="h-16 mb-4 mx-auto transition-all duration-500 group-hover:scale-105 opacity-90"
+                    style={{ filter: 'brightness(1.2) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
+                  />
                   <div className="text-xs text-muted-foreground leading-relaxed max-w-xs">
-                    Computer-Aided Design Software License Donation
+                    Supporting CoreGuard Mobility development with Autodesk's Product Design and Manufacturing suite.
                   </div>
                 </div>
               </div>
