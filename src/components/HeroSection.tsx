@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
-import wheelchairPlatformBack from "@/assets/wheelchair-platform-back.png";
+import shieldOnDrape from "@/assets/shield-on-drape.jpg";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,8 +37,8 @@ export const HeroSection = () => {
               {/* Static image with seamless background blend */}
               <div className="relative mx-auto">
                 <img 
-                  src={wheelchairPlatformBack} 
-                  alt="Revolutionary luxury mobility device draped in black silk on rotating platform"
+                  src={shieldOnDrape} 
+                  alt="CoreGuard ONE luxury mobility device with shield emblem draped in purple silk on rotating platform"
                   className="w-full h-auto max-w-3xl object-contain mx-auto"
                   style={{ 
                     filter: 'drop-shadow(0 0 30px hsl(var(--primary) / 0.4))',
