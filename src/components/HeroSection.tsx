@@ -59,7 +59,7 @@ export const HeroSection = () => {
                 textShadow: '0 0 40px hsl(var(--primary) / 0.5)'
               }}
             >
-              CoreGuard ONE
+              CoreGuard Mobility
             </span>
           </h1>
 

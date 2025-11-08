@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import autodeskLogo from "@/assets/autodesk-logo.png";
+import at4dLogo from "@/assets/at4d-logo.png";
 
 export const PartnersSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,21 +85,14 @@ export const PartnersSection = () => {
             <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
               <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
                 <div className="text-center">
-                  <div 
-                    className="heading-font text-5xl font-bold mb-3 transition-all duration-500 group-hover:scale-105"
-                    style={{ 
-                      color: 'hsl(var(--primary))',
-                      filter: 'grayscale(100%) brightness(1.2)',
-                      textShadow: '0 0 20px hsl(var(--primary) / 0.3)'
-                    }}
-                  >
-                    AT4D
-                  </div>
-                  <div className="text-xs text-primary/70 uppercase tracking-widest mb-4">
-                    Assistive Technologies for Disability
-                  </div>
+                  <img 
+                    src={at4dLogo} 
+                    alt="Assistive Technology for Disability Trust" 
+                    className="h-16 mb-4 mx-auto transition-all duration-500 group-hover:scale-105"
+                    style={{ filter: 'brightness(10) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
+                  />
                   <div className="text-xs text-muted-foreground leading-relaxed max-w-xs">
-                    Assistive Tech for Development Product Incubation
+                    Supporting CoreGuard Mobility through incubation, mentoring, and linkages to professionals and stakeholders in the accessibility technology arena.
                   </div>
                 </div>
               </div>
