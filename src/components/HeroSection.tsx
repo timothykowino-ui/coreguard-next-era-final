@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
-import shieldOnDrape from "@/assets/shield-on-drape.jpg";
+import wheelchairPlatform from "@/assets/wheelchair-platform-back.png";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,8 +37,8 @@ export const HeroSection = () => {
               {/* Static image with seamless background blend */}
               <div className="relative mx-auto">
                 <img 
-                  src={shieldOnDrape} 
-                  alt="CoreGuard ONE luxury mobility device with shield emblem draped in purple silk on rotating platform"
+                  src={wheelchairPlatform} 
+                  alt="CoreGuard Mobility luxury wheelchair on rotating platform with shield emblem"
                   className="w-full h-auto max-w-3xl object-contain mx-auto"
                   style={{ 
                     filter: 'drop-shadow(0 0 30px hsl(var(--primary) / 0.4))',
@@ -72,20 +72,6 @@ export const HeroSection = () => {
             Engineered from lived experience. Designed for dignity.
           </p>
 
-          {/* CTA Button */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <Button 
-              size="lg"
-              className="heading-font px-10 py-6 text-base tracking-widest uppercase text-white hover:text-white bg-primary/10 border-2 border-white/30 hover:bg-primary/20 hover:border-white/50 transition-all duration-500 group relative overflow-hidden"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <span className="relative z-10">Join the Waitlist</span>
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: 'var(--gradient-silver)', mixBlendMode: 'overlay' }}
-              />
-            </Button>
-          </div>
         </div>
 
         {/* Scroll Indicator */}

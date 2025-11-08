@@ -20,7 +20,7 @@ const features = [
   {
     icon: Heart,
     title: "User Dignity through Design",
-    description: "Discreet functionality without bulk, empowering independence with elegance"
+    description: "Discreet functionality without bulk."
   }
 ];
 

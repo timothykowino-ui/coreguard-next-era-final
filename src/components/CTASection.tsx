@@ -10,7 +10,7 @@ export const CTASection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast.success("Thank you for your interest! We'll notify you when CoreGuard ONE launches.", {
+      toast.success("Thank you for your interest! We'll notify you when CoreGuard Mobility launches.", {
         description: "Stay tuned for updates on the future of mobility."
       });
       setEmail("");
@@ -32,7 +32,7 @@ export const CTASection = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Sign up for launch updates and be among the first to know when CoreGuard ONE becomes available
+            Sign up for launch updates and be among the first to know when CoreGuard Mobility becomes available
           </p>
 
           <form 

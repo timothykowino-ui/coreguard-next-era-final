@@ -63,17 +63,12 @@ export const PartnersSection = () => {
             {/* Autodesk Foundation */}
             <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
               <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
-                <div className="text-center">
-                  <img 
-                    src={autodeskLogo} 
-                    alt="Autodesk Technology Impact" 
-                    className="h-16 mb-4 mx-auto transition-all duration-500 group-hover:scale-105 opacity-90"
-                    style={{ filter: 'brightness(1.2) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
-                  />
-                  <div className="text-xs text-muted-foreground leading-relaxed max-w-xs">
-                    Supporting CoreGuard Mobility development with Autodesk's Product Design and Manufacturing suite.
-                  </div>
-                </div>
+                <img 
+                  src={autodeskLogo} 
+                  alt="Autodesk Technology Impact" 
+                  className="h-16 mx-auto transition-all duration-500 group-hover:scale-105 opacity-90"
+                  style={{ filter: 'brightness(1.2) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
+                />
               </div>
               <div 
                 className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -84,17 +79,12 @@ export const PartnersSection = () => {
             {/* AT4D */}
             <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
               <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
-                <div className="text-center">
-                  <img 
-                    src={at4dLogo} 
-                    alt="Assistive Technology for Disability Trust" 
-                    className="h-16 mb-4 mx-auto transition-all duration-500 group-hover:scale-105"
-                    style={{ filter: 'brightness(10) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
-                  />
-                  <div className="text-xs text-muted-foreground leading-relaxed max-w-xs">
-                    Supporting CoreGuard Mobility through incubation, mentoring, and linkages to professionals and stakeholders in the accessibility technology arena.
-                  </div>
-                </div>
+                <img 
+                  src={at4dLogo} 
+                  alt="Assistive Technology for Disability Trust" 
+                  className="h-16 mx-auto transition-all duration-500 group-hover:scale-105"
+                  style={{ filter: 'brightness(10) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
+                />
               </div>
               <div 
                 className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
