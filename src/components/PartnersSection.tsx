@@ -82,8 +82,8 @@ export const PartnersSection = () => {
                 <img 
                   src={at4dLogo} 
                   alt="Assistive Technology for Disability Trust" 
-                  className="h-16 mx-auto transition-all duration-500 group-hover:scale-105"
-                  style={{ filter: 'brightness(10) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
+                  className="h-20 mx-auto transition-all duration-500 group-hover:scale-105 opacity-90"
+                  style={{ filter: 'brightness(1.2) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
                 />
               </div>
               <div 
