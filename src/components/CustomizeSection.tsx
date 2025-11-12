@@ -138,16 +138,16 @@ export const CustomizeSection = () => {
 
           {/* Bottom tagline */}
           <div className="text-center space-y-6">
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-foreground font-medium text-lg max-w-2xl mx-auto" style={{ textShadow: '0 0 8px hsl(var(--primary) / 0.2)' }}>
               Each CoreGuard model will be precisely configured to match your specific physical requirements and mobility goals through our upcoming user customization portal.
             </p>
             
             <div className="inline-block relative">
               <div 
-                className="absolute inset-0 blur-lg opacity-30"
+                className="absolute inset-0 blur-lg opacity-40"
                 style={{ background: 'var(--gradient-silver)' }}
               />
-              <p className="relative text-sm text-primary/60 italic">
+              <p className="relative text-base text-primary font-semibold italic" style={{ textShadow: '0 0 8px hsl(var(--primary) / 0.3)' }}>
                 Configuration portal launching soon
               </p>
             </div>

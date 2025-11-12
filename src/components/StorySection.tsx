@@ -70,34 +70,34 @@ export const StorySection = () => {
               <div className="relative">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                      <div className="w-8 h-8 border-2 border-primary rounded-full" />
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
+                      <div className="w-8 h-8 border-3 border-primary rounded-full" style={{ filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
                     </div>
-                    <p className="text-sm text-muted-foreground">Ergonomic<br/>Precision</p>
+                    <p className="text-sm font-semibold text-foreground">Ergonomic<br/>Precision</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                      <div className="w-8 h-8 border-2 border-primary" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }} />
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
+                      <div className="w-8 h-8 border-3 border-primary" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
                     </div>
-                    <p className="text-sm text-muted-foreground">Human Form<br/>Balance</p>
+                    <p className="text-sm font-semibold text-foreground">Human Form<br/>Balance</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                      <div className="w-8 h-8 border-2 border-primary rounded-sm rotate-45" />
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
+                      <div className="w-8 h-8 border-3 border-primary rounded-sm rotate-45" style={{ filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
                     </div>
-                    <p className="text-sm text-muted-foreground">Structural<br/>Stability</p>
+                    <p className="text-sm font-semibold text-foreground">Structural<br/>Stability</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                      <div className="w-8 h-8 border-2 border-primary" style={{ borderRadius: '50% 50% 0 0' }} />
+                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
+                      <div className="w-8 h-8 border-3 border-primary" style={{ borderRadius: '50% 50% 0 0', filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
                     </div>
-                    <p className="text-sm text-muted-foreground">Adaptive<br/>Support</p>
+                    <p className="text-sm font-semibold text-foreground">Adaptive<br/>Support</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <p className="text-center text-xl font-light pt-8 text-primary/90 italic">
+            <p className="text-center text-xl font-semibold pt-8 text-foreground italic" style={{ textShadow: '0 0 10px hsl(var(--primary) / 0.3)' }}>
               Every contour, every angle — engineered for protection, designed for dignity
             </p>
           </div>
