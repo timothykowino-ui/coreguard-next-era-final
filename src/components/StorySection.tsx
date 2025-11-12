@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import carbonFiberBg from "@/assets/carbon-fiber-bg.jpg";
+import iconErgonomic from "@/assets/icon-ergonomic-precision.png";
+import iconBalance from "@/assets/icon-human-balance.png";
+import iconStability from "@/assets/icon-structural-stability.png";
+import iconAdaptive from "@/assets/icon-adaptive-support.png";
 
 export const StorySection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,26 +74,26 @@ export const StorySection = () => {
               <div className="relative">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
-                      <div className="w-8 h-8 border-3 border-primary rounded-full" style={{ filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
+                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
+                      <img src={iconErgonomic} alt="Ergonomic Precision" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-semibold text-foreground">Ergonomic<br/>Precision</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
-                      <div className="w-8 h-8 border-3 border-primary" style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%', filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
+                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
+                      <img src={iconBalance} alt="Human Form Balance" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-semibold text-foreground">Human Form<br/>Balance</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
-                      <div className="w-8 h-8 border-3 border-primary rounded-sm rotate-45" style={{ filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
+                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
+                      <img src={iconStability} alt="Structural Stability" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-semibold text-foreground">Structural<br/>Stability</p>
                   </div>
                   <div className="space-y-3">
-                    <div className="w-16 h-16 mx-auto rounded-lg bg-primary/20 border-2 border-primary/50 flex items-center justify-center shadow-lg" style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.4)' }}>
-                      <div className="w-8 h-8 border-3 border-primary" style={{ borderRadius: '50% 50% 0 0', filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.6))' }} />
+                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
+                      <img src={iconAdaptive} alt="Adaptive Support" className="w-full h-full object-contain" />
                     </div>
                     <p className="text-sm font-semibold text-foreground">Adaptive<br/>Support</p>
                   </div>
