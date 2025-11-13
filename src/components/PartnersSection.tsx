@@ -77,18 +77,11 @@ export const PartnersSection = () => {
             </div>
 
             {/* AT4D */}
-            <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
-              <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
-                <img 
-                  src={at4dLogo} 
-                  alt="Assistive Technology for Disability Trust" 
-                  className="h-20 mx-auto transition-all duration-500 group-hover:scale-105 opacity-90"
-                  style={{ filter: 'brightness(1.2) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))' }}
-                />
-              </div>
-              <div 
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ boxShadow: 'var(--shadow-glow)' }}
+            <div className="flex flex-col items-center justify-center min-h-[200px] w-full">
+              <img 
+                src={at4dLogo} 
+                alt="Assistive Technology for Disability Trust" 
+                className="h-20 mx-auto"
               />
             </div>
           </div>
