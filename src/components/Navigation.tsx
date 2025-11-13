@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Our Story", href: "#story" },
-  { name: "Technology", href: "#technology" },
   { name: "Customization", href: "#customize" },
   { name: "Partners", href: "#partners" },
   { name: "Contact", href: "#contact" }

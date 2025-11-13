@@ -1,12 +1,33 @@
 import { useEffect, useRef, useState } from "react";
+import { Shield, User, Activity, Heart } from "lucide-react";
 import carbonFiberBg from "@/assets/carbon-fiber-bg.jpg";
-import iconErgonomic from "@/assets/icon-ergonomic-precision.png";
-import iconBalance from "@/assets/icon-human-balance.png";
-import iconStability from "@/assets/icon-structural-stability.png";
-import iconAdaptive from "@/assets/icon-adaptive-support.png";
+
+const features = [
+  {
+    icon: Shield,
+    title: "Safety & Stability",
+    description: "Mechanical balance and fall prevention systems engineered for maximum protection"
+  },
+  {
+    icon: User,
+    title: "Ergonomic Posture Support",
+    description: "Adaptive spinal and headrest systems that respond to individual body needs"
+  },
+  {
+    icon: Activity,
+    title: "Impact & Pressure Management",
+    description: "Advanced materials that distribute load evenly to prevent secondary injuries"
+  },
+  {
+    icon: Heart,
+    title: "User Dignity through Design",
+    description: "Discreet functionality without bulk."
+  }
+];
 
 export const StorySection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -65,45 +86,55 @@ export const StorySection = () => {
               CoreGuard Mobility represents considered, functional, and dignified design — by a wheelchair user, for wheelchair users.
             </p>
 
-            {/* Animated line drawings representation */}
-            <div className="my-16 p-12 rounded-xl bg-card/50 border border-primary/20 backdrop-blur-sm relative overflow-hidden">
-              {/* Decorative animated lines */}
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-shimmer" />
-              <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-shimmer" style={{ animationDelay: '2s' }} />
-              
-              <div className="relative">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                  <div className="space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
-                      <img src={iconErgonomic} alt="Ergonomic Precision" className="w-full h-full object-contain" />
+            {/* Features Grid */}
+            <div className="grid md:grid-cols-2 gap-8 mt-16">
+              {features.map((feature, index) => (
+                <div 
+                  key={feature.title}
+                  className="group relative p-8 rounded-xl bg-card/50 border border-border/30 backdrop-blur-sm transition-all duration-500 hover:border-primary/50"
+                  style={{
+                    animationDelay: `${index * 0.15}s`,
+                    boxShadow: hoveredIndex === index ? 'var(--shadow-glow)' : 'none'
+                  }}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  {/* Animated corner accents */}
+                  <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-primary/0 group-hover:border-primary/50 transition-all duration-500 rounded-tl-xl" />
+                  <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-primary/0 group-hover:border-primary/50 transition-all duration-500 rounded-br-xl" />
+
+                  <div className="relative z-10">
+                    <div className="flex items-start gap-6">
+                      <div className="flex-shrink-0">
+                        <div 
+                          className="w-16 h-16 rounded-lg flex items-center justify-center bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-all duration-500"
+                          style={{
+                            boxShadow: hoveredIndex === index ? '0 0 20px hsl(var(--primary) / 0.3)' : 'none'
+                          }}
+                        >
+                          <feature.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="heading-font text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-sm font-semibold text-foreground">Ergonomic<br/>Precision</p>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
-                      <img src={iconBalance} alt="Human Form Balance" className="w-full h-full object-contain" />
-                    </div>
-                    <p className="text-sm font-semibold text-foreground">Human Form<br/>Balance</p>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
-                      <img src={iconStability} alt="Structural Stability" className="w-full h-full object-contain" />
-                    </div>
-                    <p className="text-sm font-semibold text-foreground">Structural<br/>Stability</p>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center p-3 hover:bg-primary/20 transition-all duration-300">
-                      <img src={iconAdaptive} alt="Adaptive Support" className="w-full h-full object-contain" />
-                    </div>
-                    <p className="text-sm font-semibold text-foreground">Adaptive<br/>Support</p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
-            <p className="text-center text-xl font-semibold pt-8 text-foreground italic" style={{ textShadow: '0 0 10px hsl(var(--primary) / 0.3)' }}>
-              Every contour, every angle — engineered for protection, designed for dignity
-            </p>
+            {/* Bottom tagline */}
+            <div className="mt-16 text-center">
+              <p className="text-lg text-muted-foreground italic">
+                Precision engineering meets human-centered innovation
+              </p>
+            </div>
           </div>
         </div>
       </div>
