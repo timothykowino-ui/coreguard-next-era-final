@@ -58,7 +58,7 @@ export const StorySection = () => {
           {/* Story Content */}
           <div className="space-y-8 text-lg leading-relaxed">
             <p className="text-foreground/90">
-              CoreGuard Mobility was conceived by a high-risk quadriplegic wheelchair user, whose lived experience defines every design decision. The mission: to minimize secondary injury risks — including fall risk, head and impact injury, pressure injuries, and those caused by lack of posture support.
+              CoreGuard Mobility was conceived by a quadriplegic wheelchair user, whose lived experience defines every design decision. The mission: to minimize secondary injury risks — including fall risk, head and impact injury, pressure injuries, and those caused by lack of posture support.
             </p>
 
             <p className="text-foreground/90">
