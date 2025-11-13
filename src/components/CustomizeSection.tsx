@@ -142,15 +142,9 @@ export const CustomizeSection = () => {
               Each CoreGuard model will be precisely configured to match your specific physical requirements and mobility goals through our upcoming user customization portal.
             </p>
             
-            <div className="inline-block relative">
-              <div 
-                className="absolute inset-0 blur-lg opacity-40"
-                style={{ background: 'var(--gradient-silver)' }}
-              />
-              <p className="relative text-base text-primary font-semibold italic" style={{ textShadow: '0 0 8px hsl(var(--primary) / 0.3)' }}>
-                Configuration portal launching soon
-              </p>
-            </div>
+            <p className="text-base text-primary italic">
+              Configuration portal launching soon
+            </p>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="max-w-2xl mx-auto mb-8">
             <p className="text-sm text-muted-foreground leading-relaxed">
-              CoreGuard Mobility is a fully owned subsidiary of{" "}
+              CoreGuard Mobility is a product of{" "}
               <span className="text-foreground font-medium">Grovizhon LLP</span>, Nairobi, Kenya
             </p>
           </div>
