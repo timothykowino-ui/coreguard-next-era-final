@@ -29,16 +29,12 @@ export const Footer = () => {
 
           {/* Links */}
           <div className="flex items-center justify-center gap-6 text-xs text-primary/60">
-            <a href="#" className="hover:text-primary transition-colors duration-300">
+            <a href="/privacy-policy.txt" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300">
               Privacy Policy
             </a>
             <span className="text-border">|</span>
-            <a href="#" className="hover:text-primary transition-colors duration-300">
+            <a href="/terms.txt" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300">
               Terms
-            </a>
-            <span className="text-border">|</span>
-            <a href="#contact" className="hover:text-primary transition-colors duration-300">
-              Contact
             </a>
           </div>
 
