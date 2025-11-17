@@ -24,7 +24,7 @@ export const HeroSection = () => {
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           {/* Main Headline */}
-          <h1 className="heading-font text-5xl md:text-7xl font-bold mb-12 tracking-wide animate-fade-in-up text-white pt-8" style={{ animationDelay: '0.2s' }}>
+          <h1 className="heading-font text-4xl md:text-5xl font-bold mb-8 tracking-wide animate-fade-in-up text-white pt-4" style={{ animationDelay: '0.2s' }}>
             Introducing{" "}
             <span 
               className="bg-clip-text text-transparent"
@@ -38,7 +38,7 @@ export const HeroSection = () => {
           </h1>
 
           {/* Static Platform with Draped Wheelchair */}
-          <div className="relative mx-auto mb-12 max-w-3xl">
+          <div className="relative mx-auto mb-8 max-w-2xl">
             {/* Platform base with silver underlighting */}
             <div className="relative">
               <div 
@@ -65,11 +65,11 @@ export const HeroSection = () => {
           </div>
 
           {/* Tagline */}
-          <p className="text-lg md:text-xl mb-4 font-light italic animate-fade-in-up text-white/80" style={{ animationDelay: '0.5s' }}>
+          <p className="text-base md:text-lg mb-3 font-light italic animate-fade-in-up text-white/80" style={{ animationDelay: '0.5s' }}>
             Engineered from lived experience. Designed for dignity.
           </p>
 
-          <p className="text-xl md:text-2xl font-light animate-fade-in-up tracking-wide text-white/90" style={{ animationDelay: '0.6s' }}>
+          <p className="text-lg md:text-xl font-light animate-fade-in-up tracking-wide text-white/90" style={{ animationDelay: '0.6s' }}>
             Coming Soon
           </p>
 
