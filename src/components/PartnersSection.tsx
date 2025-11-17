@@ -83,7 +83,7 @@ export const PartnersSection = () => {
 
             {/* AT4D */}
             <a 
-              href="https://www.at4d.org/"
+              href="https://at4d.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm"
