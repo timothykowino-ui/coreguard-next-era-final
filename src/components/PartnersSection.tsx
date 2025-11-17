@@ -61,7 +61,12 @@ export const PartnersSection = () => {
           {/* Partner Logos - Silver Monochrome */}
           <div className="grid md:grid-cols-2 gap-12 items-center justify-items-center mb-16">
             {/* Autodesk Foundation */}
-            <div className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm">
+            <a 
+              href="https://www.autodesk.com/in/sustainability/technology-impact-program"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-10 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 transition-all duration-500 w-full backdrop-blur-sm"
+            >
               <div className="flex flex-col items-center justify-center min-h-[200px] gap-6">
                 <img 
                   src={autodeskLogo} 
@@ -74,16 +79,21 @@ export const PartnersSection = () => {
                 className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ boxShadow: 'var(--shadow-glow)' }}
               />
-            </div>
+            </a>
 
             {/* AT4D */}
-            <div className="flex flex-col items-center justify-center min-h-[200px] w-full">
+            <a 
+              href="https://www.at4d.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center min-h-[200px] w-full"
+            >
               <img 
                 src={at4dLogo} 
                 alt="Assistive Technology for Disability Trust" 
-                className="h-20 mx-auto"
+                className="h-20 mx-auto transition-all duration-300 hover:scale-105"
               />
-            </div>
+            </a>
           </div>
 
           {/* Additional Context */}
