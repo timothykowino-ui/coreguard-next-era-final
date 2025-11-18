@@ -5,7 +5,8 @@ const navItems = [
   { name: "Home", href: "#home" },
   { name: "Our Story", href: "#story" },
   { name: "Customization", href: "#customize" },
-  { name: "Partners", href: "#partners" }
+  { name: "Partners", href: "#partners" },
+  { name: "Contact Us", href: "#contact" }
 ];
 
 export const Navigation = () => {
@@ -31,14 +32,18 @@ export const Navigation = () => {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const yOffset = -80; // Offset for fixed nav
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 100);
     } else {
-      // Already on home page, just scroll
+      // Already on home page, just scroll with offset
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const yOffset = -80; // Offset for fixed nav
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
   };

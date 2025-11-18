@@ -19,11 +19,20 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Company Info */}
+          {/* Contact Info */}
           <div className="max-w-2xl mx-auto mb-8">
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               CoreGuard Mobility is a product of{" "}
               <span className="text-foreground font-medium">Grovizhon LLP</span>, Nairobi, Kenya
+            </p>
+            <p className="text-sm text-muted-foreground">
+              For inquiries, please contact us at:{" "}
+              <a 
+                href="mailto:info@coreguardmobility.com" 
+                className="text-primary hover:text-primary/80 transition-colors duration-300 underline underline-offset-4"
+              >
+                info@coreguardmobility.com
+              </a>
             </p>
           </div>
 
