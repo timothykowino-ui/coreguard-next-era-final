@@ -1,20 +1,9 @@
-import { useState } from "react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Mail } from "lucide-react";
-import { toast } from "sonner";
 
 export const CTASection = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      toast.success("Thank you for your interest! We'll notify you when CoreGuard Mobility launches.", {
-        description: "Stay tuned for updates on the future of mobility."
-      });
-      setEmail("");
-    }
+  const handleSubscribe = () => {
+    // Replace this URL with your actual Google Form URL
+    window.open('https://forms.gle/YOUR_GOOGLE_FORM_ID', '_blank');
   };
 
   return (
@@ -32,40 +21,28 @@ export const CTASection = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Sign up for launch updates and be among the first to know when CoreGuard Mobility becomes available
+            Subscribe to our newsletter for updates, insights, and the latest news from CoreGuard Mobility
           </p>
 
-          <form 
-            onSubmit={handleSubmit} 
-            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto animate-fade-in-up"
+          <div 
+            className="flex justify-center animate-fade-in-up"
             style={{ animationDelay: '0.4s' }}
           >
-            <div className="flex-1 relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="pl-12 h-14 bg-card border-border/50 focus:border-primary transition-colors"
-                required
-              />
-            </div>
             <Button 
-              type="submit"
+              onClick={handleSubscribe}
               size="lg"
               className="h-14 px-8 relative overflow-hidden group bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              <span className="relative z-10">Notify Me</span>
+              <span className="relative z-10">Subscribe to Newsletter</span>
               <div 
                 className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                 style={{ background: 'var(--gradient-silver)' }}
               />
             </Button>
-          </form>
+          </div>
 
           <p className="mt-8 text-sm text-muted-foreground">
-            We respect your privacy. Unsubscribe at any time.
+            We collect only your name and email address for newsletter distribution, in compliance with Kenya's Data Protection Act, 2019. You can unsubscribe at any time.
           </p>
         </div>
       </div>
