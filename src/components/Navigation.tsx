@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "Our Story", href: "#story" },
-  { name: "Customization", href: "#customize" },
-  { name: "Partners", href: "#partners" }
+  { name: "Home", href: "/#home" },
+  { name: "Our Story", href: "/#story" },
+  { name: "Customization", href: "/#customize" },
+  { name: "Partners", href: "/#partners" }
 ];
 
 export const Navigation = () => {

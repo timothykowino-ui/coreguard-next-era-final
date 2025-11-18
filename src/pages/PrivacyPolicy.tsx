@@ -88,7 +88,7 @@ const PrivacyPolicy = () => {
               <li><strong>Data Portability:</strong> Request your data in a portable format</li>
             </ul>
             <p className="mb-4">
-              To exercise any of these rights, contact us at <strong>info@coreguardmobility.com</strong>.
+              To exercise any of these rights, contact us at <a href="mailto:info@coreguardmobility.com" className="text-primary hover:underline"><strong>info@coreguardmobility.com</strong></a>.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">7. Cookies and Tracking Technologies</h2>
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
             <p className="mb-2"><strong>CoreGuard Mobility</strong></p>
             <p className="mb-2">A product of Grovizhon LLP</p>
             <p className="mb-2">Nairobi, Kenya</p>
-            <p className="mb-4">Email: info@coreguardmobility.com</p>
+            <p className="mb-4">Email: <a href="mailto:info@coreguardmobility.com" className="text-primary hover:underline">info@coreguardmobility.com</a></p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">14. Complaints to the Data Protection Commissioner</h2>
             <p className="mb-4">
