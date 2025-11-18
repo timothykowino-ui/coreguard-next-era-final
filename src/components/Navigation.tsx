@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
-  { name: "Home", href: "/#home" },
-  { name: "Our Story", href: "/#story" },
-  { name: "Customization", href: "/#customize" },
-  { name: "Partners", href: "/#partners" }
+  { name: "Home", href: "#home" },
+  { name: "Our Story", href: "#story" },
+  { name: "Customization", href: "#customize" },
+  { name: "Partners", href: "#partners" }
 ];
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +20,28 @@ export const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const sectionId = href.replace('#', '');
+    
+    if (location.pathname !== '/') {
+      // Navigate to home first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <nav 
@@ -31,6 +56,7 @@ export const Navigation = () => {
               <li key={item.name}>
               <a
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="heading-font text-sm tracking-wider uppercase text-white/80 hover:text-white transition-all duration-300 relative group"
                 >
                   {item.name}
