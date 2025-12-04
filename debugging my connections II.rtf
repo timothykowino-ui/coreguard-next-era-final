@@ -2696,6 +2696,53 @@ tasklist\f5  /\f1 FI\f5  \f1 "IMAGENAME\f5  \f1 eq\f5  \f1 node\f5 .\f1 exe"\par
 \f5 - \f1 The\f5  \f1 netstat\f5  \f1 result\f5  (\f1 if\f5  \f1 any\f5 ).\f1\par
 \f5 - \f1 The\f5  \f1 tasklist\f5  \f1 output\f5  \f1 for\f5  \f1 the\f5  \f1 PID\f5  (\f1 if\f5  \f1 any\f5 ).\f1\par
 \par
-I\rquote ll\f5  \f1 tell\f5  \f1 you\f5  \f1 the\f5  \f1 exact\f5  \f1 next\f5  \f1 step\f5  \f1 once\f5  \f1 you\f5  \f1 paste\f5  \f1 those\f5  \f1 outputs\f5 .\f0\lang1033\par
+I\rquote ll\f5  \f1 tell\f5  \f1 you\f5  \f1 the\f5  \f1 exact\f5  \f1 next\f5  \f1 step\f5  \f1 once\f5  \f1 you\f5  \f1 paste\f5  \f1 those\f5  \f1 outputs\f5 .\par
+\par
+GitHub Copilot\par
+\par
+\b Quick checklist + exact commands to commit your changes (pick PowerShell or Command Prompt examples).\par
+\b0\par
+1) See what changed\par
+```powershell\par
+# PowerShell\par
+cd 'c:\\Users\\hp\\Desktop\\2025 professional folder\\CoreGuard ONE\\CoreGuard Mobility Website\\coreguard-mobility-website\\coreguard-next-era - Copy'\par
+git status\par
+```\par
+\par
+2) Stage changes (all files) and commit with a message\par
+```powershell\par
+git add -A\par
+git commit -m "feat: add lazy HubSpot newsletter, NewsletterSubscribe component, and hubspotLoader"\par
+```\par
+\par
+3) If Git opened the commit editor (COMMIT_EDITMSG)\par
+- Type your message, save (Ctrl+S) and close the tab \emdash  Git will finish the commit.\par
+\par
+4) Push to remote\par
+```powershell\par
+git push origin main\par
+```\par
+(if you use a different branch replace main with your branch name)\par
+\par
+5) Verify the commit\par
+```powershell\par
+git log -1 --oneline\par
+git show --name-only HEAD\par
+```\par
+\par
+Useful extras\par
+- Stage selectively: git add path/to/file\par
+- Unstage: git restore --staged <file>  (or git reset HEAD <file>)\par
+- Amend last commit (if you forgot something):\par
+```powershell\par
+git add <file>\par
+git commit --amend --no-edit\par
+git push --force-with-lease\par
+```\par
+\par
+If you see any errors from git push or commit, paste the output and I\rquote ll tell you the exact fix.\par
+\par
+\par
+\f0\lang1033\par
 }
  
