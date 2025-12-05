@@ -1,193 +1,108 @@
-/* public/styles.css
-   Global theme variables and base styles for uniform look + floating menu
-   Tweak the color variables to match your brand.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
 */
 
-:root{
-  --brand: #0b5cff;         /* primary brand color */
-  --accent: #07a081;        /* secondary */
-  --bg: #ffffff;
-  --muted: #6b7280;
-  --text: #111827;
-  --surface: #f8fafc;
-  --max-width: 1200px;
-  --radius: 10px;
-  --shadow: 0 6px 18px rgba(16,24,40,0.08);
-  --glass: rgba(255,255,255,0.6);
-  --nav-height: 64px;
+@layer base {
+  :root {
+    /* CoreGuard Dark Theme - Matte Black with Metallic Accents */
+    --background: 220 20% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Silver/Titanium Primary */
+    --primary: 210 15% 70%;
+    --primary-foreground: 220 20% 10%;
+
+    /* Darker secondary for subtle contrasts */
+    --secondary: 220 18% 15%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 210 12% 60%;
+
+    /* Titanium accent */
+    --accent: 210 12% 60%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 210 15% 70%;
+
+    --radius: 0.75rem;
+
+    /* Metallic gradients */
+    --gradient-silver: linear-gradient(135deg, hsl(210 15% 70%) 0%, hsl(210 20% 85%) 100%);
+    --gradient-titanium: linear-gradient(135deg, hsl(210 12% 60%) 0%, hsl(210 15% 70%) 50%, hsl(210 12% 60%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 8%) 0%, hsl(220 18% 10%) 100%);
+    
+    /* Glows and shadows */
+    --glow-silver: 0 0 40px hsl(210 15% 70% / 0.3);
+    --shadow-elevated: 0 20px 50px -10px hsl(220 20% 5% / 0.5);
+    --shadow-glow: 0 0 30px hsl(210 15% 70% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
 }
 
-/* Reset / base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:var(--text);
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-/* Container */
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:1.5rem;
-}
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
 
-/* Header / top nav */
-.site-header{
-  height:var(--nav-height);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 1rem;
-  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-  border-bottom:1px solid rgba(15,23,42,0.03);
-  position:sticky;
-  top:0;
-  z-index:60;
-  backdrop-filter: blur(6px);
-}
-.site-brand{
-  display:flex;
-  gap:0.75rem;
-  align-items:center;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:700;
-  font-size:1.05rem;
-}
-.site-brand img{height:36px;width:auto;border-radius:6px;}
+  h1, h2, h3, .heading-font {
+    font-family: 'Orbitron', sans-serif;
+  }
 
-/* header links */
-.site-nav{
-  display:flex;
-  gap:1rem;
-  align-items:center;
-}
-.site-nav a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:600;
-  padding:0.45rem 0.6rem;
-  border-radius:8px;
-}
-.site-nav a:hover{color:var(--brand); background:rgba(11,92,255,0.06);}
+  /* Geometric pattern overlay */
+  .geometric-pattern {
+    background-image: 
+      linear-gradient(45deg, hsl(210 15% 70% / 0.02) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(210 15% 70% / 0.02) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(210 15% 70% / 0.02) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(210 15% 70% / 0.02) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  }
 
-/* Primary CTA (subscribe) */
-.btn{
-  display:inline-flex;
-  gap:.6rem;
-  align-items:center;
-  justify-content:center;
-  padding:0.6rem 0.95rem;
-  border-radius:10px;
-  border:0;
-  cursor:pointer;
-  font-weight:700;
-  color:#fff;
-  background:linear-gradient(90deg,var(--brand), #0064ff);
-  box-shadow:var(--shadow);
-  text-decoration:none;
-}
-.btn.secondary{
-  background:transparent;
-  color:var(--brand);
-  border:1px solid rgba(11,92,255,0.09);
-  font-weight:700;
-}
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
 
-/* Page hero and content */
-.hero{
-  padding:2.5rem 1rem;
-  background:linear-gradient(90deg, rgba(11,92,255,0.03), rgba(7,160,129,0.02));
-  border-bottom:1px solid rgba(15,23,42,0.02);
-}
-.hero h1{margin:0 0 .5rem 0;font-size:1.9rem}
-.hero p{margin:0;font-size:1rem;color:var(--muted)}
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-/* Content layout */
-.content{
-  display:block;
-  padding:2rem 1rem;
-  background:var(--bg);
-}
-.article{
-  max-width:900px;
-  margin:0 auto;
-  padding:1rem 0;
-}
-.article h2{margin-top:0;font-size:1.25rem}
-.article p{color:#374151}
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
 
-/* Footer */
-.site-footer{
-  background:var(--surface);
-  border-top:1px solid rgba(15,23,42,0.03);
-  padding:2rem 1rem;
-  text-align:center;
-  color:var(--muted);
-}
-.site-footer a{color:var(--brand);text-decoration:none}
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    border-radius: 4px;
+  }
 
-/* Subscribe form container */
-.subscribe-card{
-  background:var(--bg);
-  border-radius:12px;
-  box-shadow:var(--shadow);
-  padding:1rem;
-  display:flex;
-  gap:0.75rem;
-  align-items:center;
-  max-width:540px;
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
 }
-.subscribe-card input[type="email"]{
-  flex:1;
-  padding:0.6rem 0.8rem;
-  border-radius:8px;
-  border:1px solid rgba(15,23,42,0.06);
-  font-size:0.95rem;
-}
-.subscribe-card button{
-  min-width:110px;
-}
-
-/* Floating menu (bottom-right) */
-.floating-menu{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  z-index:80;
-  display:flex;
-  flex-direction:column;
-  gap:0.6rem;
-  align-items:flex-end;
-}
-.floating-toggle{
-  width:56px;height:56px;border-radius:14px;background:var(--brand);color:#fff;border:0;
-  display:inline-grid;place-items:center;font-size:20px;box-shadow:var(--shadow);cursor:pointer;
-}
-.floating-item{
-  background:var(--glass);
-  padding:0.45rem 0.7rem;border-radius:10px;border:1px solid rgba(16,24,40,0.04);
-  display:flex;align-items:center;gap:0.5rem;backdrop-filter: blur(6px);
-  transform-origin:right bottom;
-  transition:transform .18s ease,opacity .18s ease;
-  opacity:1;
-}
-.floating-item a{color:var(--text);text-decoration:none;font-weight:600}
-
-/* small screens adjustments */
-@media (max-width:720px){
-  .site-nav{display:none}
-  .site-header{padding:0 .6rem}
-  .container{padding:1rem}
-  .floating-menu{right:12px;bottom:12px}
-}
-
-/* Utility */
-.center{text-align:center}
-.hidden{display:none}
