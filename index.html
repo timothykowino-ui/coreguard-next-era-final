@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/styles.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoreGuard Mobility | Engineered from Experience</title>
@@ -22,9 +24,75 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
+<header class="site-header">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+    <a class="site-brand" href="/">
+      <!-- optional logo image -->
+      <!-- <img src="/assets/logo.png" alt="logo"> -->
+      CoreGuard Mobility
+    </a>
+    <nav class="site-nav">
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a class="btn" href="#subscribe">Subscribe</a>
+    </nav>
+  </div>
+</header>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+  <script>
+  (function(){
+    // build floating menu markup
+    const menu = document.createElement('div');
+    menu.className = 'floating-menu';
+    menu.innerHTML = `
+      <button class="floating-toggle" id="fm-toggle" aria-label="Open menu">☰</button>
+      <div id="fm-items" style="display:none;flex-direction:column;align-items:flex-end;">
+        <div class="floating-item"><a href="/">Home</a></div>
+        <div class="floating-item"><a href="/privacy-policy">Privacy</a></div>
+        <div class="floating-item"><a href="/terms">Terms</a></div>
+        <div class="floating-item"><a href="#subscribe">Subscribe</a></div>
+      </div>
+    `;
+    document.body.appendChild(menu);
+    const btn = document.getElementById('fm-toggle');
+    const items = document.getElementById('fm-items');
+    let open=false;
+    btn.addEventListener('click', ()=> {
+      open = !open;
+      items.style.display = open ? 'flex' : 'none';
+      btn.textContent = open ? '✕' : '☰';
+    });
+    // close on outside click
+    document.addEventListener('click', (e)=> {
+      if(!menu.contains(e.target) && open){
+        open=false; items.style.display='none'; btn.textContent='☰';
+      }
+    });
+  })();
+</script>
+<section id="subscribe" class="container center" style="margin:2rem auto;">
+  <div class="subscribe-card" role="region" aria-label="Subscribe to our newsletter">
+    <input type="email" id="subscribe-email" placeholder="Your email address" aria-label="Email address" />
+    <button class="btn" id="subscribe-send">Subscribe</button>
+  </div>
+  <p style="margin-top:.6rem;color:var(--muted);font-size:.95rem">Or use the form below:</p>
+  <div id="hs-form-target" style="margin-top:1rem"></div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Your Brand. All rights reserved.</p>
+    <p>
+      <a href="/">Home</a> ·
+      <a href="/privacy-policy">Privacy</a> ·
+      <a href="/terms">Terms</a>
+    </p>
+  </div>
+</footer>
+
   </body>
 </html>
