@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoreGuard Mobility | Engineered from Experience</title>
+    <meta name="description" content="CoreGuard Mobility — precision mobility systems engineered from lived experience. Designed by a high-risk quadriplegic wheelchair user to minimize secondary injury risk through ergonomic, dignified design." />
+    <meta name="keywords" content="CoreGuard Mobility, CoreGuard ONE, CoreGuard TWO, CoreGuard THREE MG, wheelchair innovation, adaptive mobility systems, ergonomic design, quadriplegic user design, pressure injury prevention, posture support technology, disability innovation Kenya" />
+    <meta name="author" content="CoreGuard Mobility - Grovizhon LLP" />
+
+    <meta property="og:title" content="CoreGuard Mobility | Engineered from Experience" />
+    <meta property="og:description" content="Precision mobility systems by wheelchair users, for wheelchair users. Introducing CoreGuard ONE, TWO, and THREE MG." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CoreGuard Mobility | Engineered from Experience" />
+    <meta name="twitter:description" content="Precision mobility systems engineered from lived experience. Coming Soon." />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
