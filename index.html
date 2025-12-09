@@ -26,5 +26,76 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+  
+<!-- HS-MODAL-INJECT -->
+<!-- HubSpot modal (injected by script) -->
+<div id="hs-modal-backdrop" class="hg-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" style="display:none;">
+  <div class="hg-modal" id="hs-modal" role="document">
+    <button class="hg-close" id="hs-modal-close" aria-label="Close subscription form">✕</button>
+    <div id="hs-form-target-modal">
+      <h2>Subscribe to our newsletter</h2>
+      <p style="color:#555;">Enter your email below and confirm via the email you receive (double opt-in).</p>
+      <!-- HubSpot form will render here -->
+    </div>
+  </div>
+</div>
+
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+(function(){
+  // Replace PORTAL_ID and FORM_ID with your HubSpot values (strings).
+  var portalId = "147364865";
+  var formId = "cfbc55fc-7e92-44c9-ba70-5ab3eed9742";
+  var loaded = false;
+  var backdrop = document.getElementById('hs-modal-backdrop');
+  var openButtons = Array.prototype.slice.call(document.querySelectorAll('a, button'));
+  // find subscribe-like elements (text contains "subscribe" case-insensitive) and add click handler
+  openButtons.forEach(function(el){
+    try {
+      if(el.textContent && /subscribe/i.test(el.textContent.trim())){
+        el.addEventListener('click', function(e){
+          // Prevent default navigation if it's a link
+          if(el.tagName.toLowerCase() === 'a'){ e.preventDefault(); }
+          openModal();
+        });
+      }
+    } catch(err){ /* ignore */ }
+  });
+
+  var closeBtn = document.getElementById('hs-modal-close');
+
+  function openModal(){
+    backdrop.style.display = 'flex';
+    backdrop.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    if(!loaded){
+      var tries = 0;
+      var interval = setInterval(function(){
+        tries++;
+        if(window.hbspt && hbspt.forms && typeof hbspt.forms.create === 'function'){
+          try {
+            hbspt.forms.create({ portalId: portalId, formId: formId, target: '#hs-form-target-modal' });
+            loaded = true;
+            clearInterval(interval);
+          } catch(e){ console.error(e); }
+        } else if(tries > 30){
+          clearInterval(interval);
+        }
+      }, 200);
+    }
+  }
+
+  function closeModal(){
+    backdrop.style.display = 'none';
+    backdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', function(e){ if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+})();
+</script>
+
+</body>
 </html>

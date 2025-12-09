@@ -57,7 +57,22 @@
     }
   </style>
 </head>
-<body>
+<body class="page-static">
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="site-brand" href="/index.html" aria-label="Home - CoreGuard Mobility">CoreGuard Mobility</a>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <a class="nav-link" href="/index.html#home">HOME</a>
+      <a class="nav-link" href="/index.html#our-story">OUR STORY</a>
+      <a class="nav-link" href="/index.html#customization">CUSTOMIZATION</a>
+      <a class="nav-link" href="/index.html#our-partners">OUR PARTNERS</a>
+      <a class="nav-link" href="/index.html#contact-us">CONTACT US</a>
+      <button class="btn nav-cta" type="button" aria-haspopup="dialog" aria-controls="hs-modal">Subscribe</button>
+    </nav>
+  </div>
+</header>
+
   <main class="page container" role="main" aria-labelledby="heading-privacy">
     <header>
       <h1 id="heading-privacy">CoreGuard Mobility — Privacy Policy</h1>
@@ -154,5 +169,16 @@
       <p>For data protection inquiries or to exercise your rights, email: <a href="mailto:info@coreguardmobility.com">info@coreguardmobility.com</a></p>
     </footer>
   </main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+    <div><small>&copy; <span class="site-year"></span> CoreGuard Mobility</small></div>
+    <div><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="mailto:info@coreguardmobility.com">Email Us</a></div>
+  </div>
+</footer>
+<script>
+  (function(){ var el = document.querySelector('.site-year'); if(el) el.textContent = new Date().getFullYear(); })();
+</script>
+
 </body>
 </html>
