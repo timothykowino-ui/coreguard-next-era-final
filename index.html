@@ -3,99 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>CoreGuard Mobility | Engineered from Experience</title>
-    <meta name="description" content="CoreGuard Mobility — precision mobility systems engineered from lived experience. Designed by a high-risk quadriplegic wheelchair user to minimize secondary injury risk through ergonomic, dignified design." />
-    <meta name="keywords" content="CoreGuard Mobility, CoreGuard ONE, CoreGuard TWO, CoreGuard THREE MG, wheelchair innovation, adaptive mobility systems, ergonomic design, quadriplegic user design, pressure injury prevention, posture support technology, disability innovation Kenya" />
+
+    <meta
+      name="description"
+      content="CoreGuard Mobility — precision mobility systems engineered from lived experience. Designed by a high-risk quadriplegic wheelchair user to minimize secondary injury risk through ergonomic, dignified design."
+    />
+    <meta
+      name="keywords"
+      content="CoreGuard Mobility, CoreGuard ONE, CoreGuard TWO, CoreGuard THREE MG, wheelchair innovation, adaptive mobility systems, ergonomic design, quadriplegic user design, pressure injury prevention, posture support technology, disability innovation Kenya"
+    />
     <meta name="author" content="CoreGuard Mobility - Grovizhon LLP" />
 
+    <!-- Open Graph -->
     <meta property="og:title" content="CoreGuard Mobility | Engineered from Experience" />
-    <meta property="og:description" content="Precision mobility systems by wheelchair users, for wheelchair users. Introducing CoreGuard ONE, TWO, and THREE MG." />
+    <meta
+      property="og:description"
+      content="Precision mobility systems by wheelchair users, for wheelchair users. Introducing CoreGuard ONE, TWO, and THREE MG."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CoreGuard Mobility | Engineered from Experience" />
-    <meta name="twitter:description" content="Precision mobility systems engineered from lived experience. Coming Soon." />
+    <meta
+      name="twitter:description"
+      content="Precision mobility systems engineered from lived experience. Coming Soon."
+    />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles & Fonts -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
+    <!-- React/Vite Mount -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  
-<!-- HS-MODAL-INJECT -->
-<!-- HubSpot modal (injected by script) -->
-<div id="hs-modal-backdrop" class="hg-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" style="display:none;">
-  <div class="hg-modal" id="hs-modal" role="document">
-    <button class="hg-close" id="hs-modal-close" aria-label="Close subscription form">✕</button>
-    <div id="hs-form-target-modal">
-      <h2>Subscribe to our newsletter</h2>
-      <p style="color:#555;">Enter your email below and confirm via the email you receive (double opt-in).</p>
-      <!-- HubSpot form will render here -->
-    </div>
-  </div>
-</div>
 
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-<script>
-(function(){
-  // Replace PORTAL_ID and FORM_ID with your HubSpot values (strings).
-  var portalId = "147364865";
-  var formId = "cfbc55fc-7e92-44c9-ba70-5ab3eed9742";
-  var loaded = false;
-  var backdrop = document.getElementById('hs-modal-backdrop');
-  var openButtons = Array.prototype.slice.call(document.querySelectorAll('a, button'));
-  // find subscribe-like elements (text contains "subscribe" case-insensitive) and add click handler
-  openButtons.forEach(function(el){
-    try {
-      if(el.textContent && /subscribe/i.test(el.textContent.trim())){
-        el.addEventListener('click', function(e){
-          // Prevent default navigation if it's a link
-          if(el.tagName.toLowerCase() === 'a'){ e.preventDefault(); }
-          openModal();
+    <!-- Fallback / Non-JS CTA (recommended for accessibility & SEO) -->
+    <noscript>
+      <div style="text-align:center; padding:2rem;">
+        <a href="public/subscribe.html" class="btn">
+          Subscribe to our newsletter
+        </a>
+      </div>
+    </noscript>
+
+    <!-- Global Subscribe CTA (non-modal, deterministic) -->
+    <script>
+      (function () {
+        // Attach navigation to any element explicitly marked as a subscribe button
+        const subscribeButtons = document.querySelectorAll(
+          '[data-subscribe-button]'
+        );
+
+        subscribeButtons.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "public/subscribe.html";
+          });
         });
-      }
-    } catch(err){ /* ignore */ }
-  });
-
-  var closeBtn = document.getElementById('hs-modal-close');
-
-  function openModal(){
-    backdrop.style.display = 'flex';
-    backdrop.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    if(!loaded){
-      var tries = 0;
-      var interval = setInterval(function(){
-        tries++;
-        if(window.hbspt && hbspt.forms && typeof hbspt.forms.create === 'function'){
-          try {
-            hbspt.forms.create({ portalId: portalId, formId: formId, target: '#hs-form-target-modal' });
-            loaded = true;
-            clearInterval(interval);
-          } catch(e){ console.error(e); }
-        } else if(tries > 30){
-          clearInterval(interval);
-        }
-      }, 200);
-    }
-  }
-
-  function closeModal(){
-    backdrop.style.display = 'none';
-    backdrop.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-  }
-
-  if(closeBtn) closeBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', function(e){ if(e.target === backdrop) closeModal(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
-})();
-</script>
-
-</body>
+      })();
+    </script>
+  </body>
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Subscribe to our newsletter</title>
+  <!-- Primary site stylesheet (will inherit your existing site styling if present) -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Fallback / minimal theme tokens (only used if your site doesn't provide them) -->
+  <style>
+    :root{
+      --site-max-width: 920px;
+      --site-rhythm: 24px;
+      --type-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --type-color: #111827;
+      --muted: #6b7280;
+      --accent: #0070f3;
+      --bg: #ffffff;
+      --card-bg: #ffffff;
+      --radius: 12px;
+    }
+
+    /* Lightweight container that should match most site layouts */
+    body{
+      font-family: var(--type-family);
+      color: var(--type-color);
+      background: var(--bg);
+      margin: 0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: calc(var(--site-rhythm) * 1.5) 16px;
+    }
+
+    .page {
+      max-width: var(--site-max-width);
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: calc(var(--site-rhythm) * 1.2);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+    }
+
+    h1 { margin-top: 0; font-size: 1.75rem; }
+    h2 { margin-bottom: 8px; font-size: 1.05rem; color: #0f172a; }
+    p, li { color: var(--type-color); line-height: 1.65; }
+    ul { margin-left: 1.15rem; }
+    a { color: var(--accent); text-decoration: underline; }
+
+    /* make it play nicely with Tailwind-enabled sites */
+    .container { padding: 0 calc(var(--site-rhythm) / 2); }
+    .muted { color: var(--muted); font-size: .95rem; }
+    @media (max-width:680px){
+      .page { padding: calc(var(--site-rhythm) * 0.75); border-radius: 8px; }
+      h1 { font-size: 1.4rem; }
+    }
+</head>
+</style>
+	
+<body class="page-static">
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="site-brand" href="/index.html" aria-label="Home - CoreGuard Mobility">CoreGuard Mobility</a>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <a class="nav-link" href="/index.html#home">|Back</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="page container" role="main" aria-labelledby="subscribe">
+    <header>
+      <h1 id="subscribe">Subscribe to our newsletter</h1>
+    </header>
+    <script>
+document
+  .getElementById("subscribe-form")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const payload = {
+      full_name: form.full_name.value,
+      email: form.email.value,
+      consent: form.consent.checked
+    };
+
+    const response = await fetch(
+      "https://rmhshifugmyqynpnhecr.supabase.co",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey":
+ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtaHNoaWZ1Z215cXlucG5oZWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxMDAzMzYsImV4cCI6MjA3OTY3NjMzNn0.GpE62JR0VctfAZRqqMTMrWLwtX-Xod3bm38RS2OLie8"
+        },
+        body: JSON.stringify(payload)
+      }
+    );
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert("Please check your email to confirm your subscription.");
+      form.reset();
+    } else {
+      alert(result.error || "Subscription failed.");
+    }
+});
+</script>
+
+
+
+  </main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+    <div><small>&copy; <span class="site-year"></span> CoreGuard Mobility</small></div>
+    <div><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="mailto:info@coreguardmobility.com">Email Us</a></div>
+  </div>
+</footer>
+<script>
+  (function(){ var el = document.querySelector('.site-year'); if(el) el.textContent = new Date().getFullYear(); })();
+</script>
+
+</body>
+</html>
