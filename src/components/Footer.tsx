@@ -1,11 +1,12 @@
 export const Footer = () => {
   return (
-    <footer id="contact" className="relative border-t">
-      {/* Thin silver divider */}
+    <footer id="contact" className="bg-background border-t border-border">
+      {/* existing footer content */}
       <div 
         className="absolute top-0 left-0 w-full h-px"
         style={{ background: 'var(--gradient-silver)' }}
       />
+
 
       <div className="container mx-auto px-6 py-12">
         <div className="text-center space-y-6">
@@ -38,7 +39,7 @@ export const Footer = () => {
 
           {/* Links */}
           <div className="flex items-center justify-center gap-6 text-xs text-primary/60">
-            <a href="/privacy-policy" className="hover:text-primary transition-colors duration-300">
+            <a href="/privacy" className="hover:text-primary transition-colors duration-300">
               Privacy Policy
             </a>
             <span className="text-border">|</span>

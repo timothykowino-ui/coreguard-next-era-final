@@ -8,34 +8,11 @@
 
     <meta
       name="description"
-      content="CoreGuard Mobility — precision mobility systems engineered from lived experience. Designed by a high-risk quadriplegic wheelchair user to minimize secondary injury risk through ergonomic, dignified design."
-    />
-    <meta
-      name="keywords"
-      content="CoreGuard Mobility, CoreGuard ONE, CoreGuard TWO, CoreGuard THREE MG, wheelchair innovation, adaptive mobility systems, ergonomic design, quadriplegic user design, pressure injury prevention, posture support technology, disability innovation Kenya"
+      content="CoreGuard Mobility — precision mobility systems engineered from lived experience."
     />
     <meta name="author" content="CoreGuard Mobility - Grovizhon LLP" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="CoreGuard Mobility | Engineered from Experience" />
-    <meta
-      property="og:description"
-      content="Precision mobility systems by wheelchair users, for wheelchair users. Introducing CoreGuard ONE, TWO, and THREE MG."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CoreGuard Mobility | Engineered from Experience" />
-    <meta
-      name="twitter:description"
-      content="Precision mobility systems engineered from lived experience. Coming Soon."
-    />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <!-- Styles & Fonts -->
-    <link rel="stylesheet" href="/styles.css" />
+    <!-- Fonts only (allowed) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,34 +22,7 @@
   </head>
 
   <body>
-    <!-- React/Vite Mount -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Fallback / Non-JS CTA (recommended for accessibility & SEO) -->
-    <noscript>
-      <div style="text-align:center; padding:2rem;">
-        <a href="public/subscribe.html" class="btn">
-          Subscribe to our newsletter
-        </a>
-      </div>
-    </noscript>
-
-    <!-- Global Subscribe CTA (non-modal, deterministic) -->
-    <script>
-      (function () {
-        // Attach navigation to any element explicitly marked as a subscribe button
-        const subscribeButtons = document.querySelectorAll(
-          '[data-subscribe-button]'
-        );
-
-        subscribeButtons.forEach((btn) => {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.location.href = "public/subscribe.html";
-          });
-        });
-      })();
-    </script>
   </body>
 </html>
